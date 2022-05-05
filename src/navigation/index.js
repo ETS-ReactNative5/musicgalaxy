@@ -15,8 +15,7 @@ export const Navigation = ({ firstLaunchFlag }) => {
 
     return (
         <Stack.Navigator
-            initialRouteName={initialRoute}
-            tabBar={() => null}
+            initialRouteName={'Home'}
         >
             <Stack.Screen
                 name={NAVIGATION_ROUTES.HOME}

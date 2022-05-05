@@ -14,7 +14,9 @@ export const MovieList = ({ route }) => {
     const insets= useSafeAreaInsets();
 
     return (
-        <Container insets={insets} >
+        <Container 
+        insets={insets} 
+        >
         <TitleWrapper>
             <StyledText>
                 {`Watch Videos of ${category}`}
