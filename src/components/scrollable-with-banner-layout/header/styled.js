@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { SvgXml } from 'react-native-svg';
 import Animated from "react-native-reanimated";
+import { scale } from "@src/utils/media";
 
 export const StyledWrapper = styled(Animated.View)`
   position: absolute;
@@ -29,7 +30,8 @@ export const SearchIcon = styled(SvgXml)`
 
 export const Title = styled.Text`
     flex:1;
-    margin-left: ${({ showBackButton }) => showBackButton ? -30 : 0}px;
+    padding-left: ${scale(25)}px;
+    margin-left: ${({ showBackButton }) => showBackButton ? -20 : 0}px;
     text-align: center;
     color: black;
 `;

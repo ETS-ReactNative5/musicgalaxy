@@ -1,7 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import FastImage from 'react-native-fast-image';
-
+/**
+ * Component to show as a Fallback component in case of any faliure. Avoid App crashing
+ * 
+ */
 export const FallBackUI = () => {
     return (
         <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center' }} >

@@ -8,7 +8,10 @@ import { APP_COLORS } from '@src/theme/colors';
 import { save } from '@src/utils/storage';
 import { useNavigation } from '@react-navigation/native';
 
-
+/**
+ * This component is responsible to show user a first visit
+ * onboarding kind of experience
+ */
 export const pages = [
     {
         backgroundColor: APP_COLORS.black,

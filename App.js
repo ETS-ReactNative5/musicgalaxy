@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 
 import React, { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
@@ -17,12 +10,13 @@ import { load } from '@src/utils/storage';
 import { Text, StatusBar } from 'react-native';
 import { Navigation } from '@src/navigation';
 import store from '@src/redux/store';
+import ErrorBoundary from 'react-native-error-boundary'
+import { FallBackUI } from '@src/components/fallback/fallback';
 
 import {
   setCustomText,
 } from 'react-native-global-props';
-import ErrorBoundary from 'react-native-error-boundary'
-import { FallBackUI } from '@src/components/fallback/fallback';
+
 
 
 // Setting default styles for all Text components.

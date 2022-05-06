@@ -12,6 +12,12 @@ import LinearGradient from 'react-native-linear-gradient';
 import { useSelector } from 'react-redux';
 import { InputWrapper, LeftIconWrapper, MainWrapper, SearchIcon, StyledInput } from './styled';
 
+/**
+ * This  component is responsible to show the user filtered
+ * result based on the query i.e Artist Name or Movie Name.
+ * Also this screen shows the default Categorised List of Genres
+ * to see the list of movies comes under any specific genre
+ */
 export const Search = () => {
 
     const [searchResults, setSearchResults] = useState('');

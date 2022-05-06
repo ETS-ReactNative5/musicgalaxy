@@ -12,6 +12,7 @@ import { useIsFocused } from '@react-navigation/native';
 import { Wave } from 'react-native-animated-spinkit';
 import { APP_COLORS } from '@src/theme/colors';
 import FastImage from 'react-native-fast-image';
+import { FallBackUI } from '@src/components/fallback/fallback';
 
 
 export const HomeScreen = () => {
@@ -29,6 +30,12 @@ export const HomeScreen = () => {
         dispatch(fetchMovies());
     }, []);
 
+    /**
+     * Handle the hardware button of Android to avoid
+     * returning back to onboarding screens and it should apply on 
+     * the Home Screen as we need it only in this screen and on the other 
+     * screens we need this default handling behaviour of back handler
+     */
     useBackHandler(() => {
         if (isFocused) {
             Alert.alert(
@@ -56,17 +63,12 @@ export const HomeScreen = () => {
         }
     })
 
+    /**
+     * This early return condition is reponsible to handle the Fallback in case
+     * of API failure.
+     */
     if (!isLoading && hasError) {
-        return <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center' }} >
-            <FastImage
-                style={{ height: '20%', width: '90%' }}
-                source={require('@assets/error.png')}
-                resizeMode={FastImage.resizeMode.contain}
-            />
-            <Text style={{ textAlign: 'center', fontSize: 16, color: 'red' }} >
-                Something went wrong while fetching the list of Music Videos :(
-            </Text>
-        </View>
+        return <FallBackUI />
     }
     return (
         isLoading ? (

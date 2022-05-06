@@ -10,6 +10,10 @@ import {
     SubTitle,
 } from './styled';
 
+/**
+ * Carousel Item component of individual List Item containing info 
+ * about the Music Video like Img, Title, Artist etc
+ */
 export const ListCarousalItem =
     ({
         imageSrc,
@@ -18,7 +22,12 @@ export const ListCarousalItem =
         artist,
     }) => {
         const [isLoading, setIsLoading] = useState(true);
-
+        /**
+         * Function used to set the image source of item card
+         * based on the loading state of image and showing the 
+         * loading indicator placeholder instead of actual loader
+         * to make the UI responsive  
+         */
         const getImageSrc = () => {
             if (isLoading) {
                 return require('@assets/loading.png')

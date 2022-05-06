@@ -5,6 +5,11 @@ import { ListCarousalItem } from './list-carousel-item';
 import { CarouselListHeader, CarouselListWrapper, HeaderContainer, ViewAll } from './styled';
 import { defaultProps, propTypes } from './props';
 
+/**
+ * This component is responsible to render the list of 
+ * Music Video Cards and expects the array of movies to render
+ * in each carousel based on the Genre of Music
+ */
 export const ListCarousal =
     ({
         movies,
