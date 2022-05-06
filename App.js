@@ -47,7 +47,6 @@ const App = () => {
   useEffect(() => {
     (async () => {
       const isFirstTime = await load('new_app_installed');
-      console.log('isFirstTime', isFirstTime)
       if (!isFirstTime) {
         setFirstLaunchFlag(true);
       } else {

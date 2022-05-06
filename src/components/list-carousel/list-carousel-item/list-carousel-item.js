@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
     StyledImage,
@@ -17,11 +17,22 @@ export const ListCarousalItem =
         releaseDate,
         artist,
     }) => {
+        const [isLoading, setIsLoading] = useState(true);
+
+        const getImageSrc = () => {
+            if (isLoading) {
+                return require('@assets/loading.png')
+            } else {
+                return { uri: imageSrc }
+            }
+        }
+
         return (
             <Container>
                 <StyledWrapper>
                     <StyledImage
-                        source={{ uri: imageSrc }}
+                        onLoadEnd={() => setIsLoading(false)}
+                        source={getImageSrc()}
                     />
                     <MovieInfoWrapper>
                         <Title>
