@@ -5,7 +5,6 @@ import {
     StyledWrapper,
     MovieInfoWrapper,
     Title,
-    MetaInfo,
     Container,
     SubTitle,
 } from './styled';

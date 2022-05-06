@@ -5,7 +5,8 @@ import FastImage from 'react-native-fast-image';
 import Onboarding from 'react-native-onboarding-swiper';
 import { scale } from '@src/utils/media';
 import { APP_COLORS } from '@src/theme/colors';
-import { navigate } from '@src/navigation/root-navigation';
+import { save } from '@src/utils/storage';
+import { useNavigation } from '@react-navigation/native';
 
 
 export const pages = [
@@ -52,10 +53,16 @@ export const pages = [
 
 export const Swipper = () => {
 
+    const navigation = useNavigation();
+
+    const onComplete = () => {
+        navigation.navigate('Home');
+        save('new_app_installed', 'true');
+    }
     return (
         <View style={{ height: '100%' }} >
             <Onboarding
-                onDone={()=>navigate('Home')}
+                onDone={onComplete}
                 showSkip={false}
                 pages={pages}
             />

@@ -12,6 +12,18 @@ export const ListCarousal =
         shouldShowViewAll,
         onPressViewAll
     }) => {
+        
+        const renderItem = ({ item }) => (
+            <ListCarousalItem
+                imageSrc={item.image_url}
+                artist={item.artist}
+                title={item.title}
+                releaseDate={item.release_year}
+                id={item.id}
+                isFeed
+            />
+        );
+
         return (
             <CarouselListWrapper>
                 <HeaderContainer>
@@ -34,16 +46,7 @@ export const ListCarousal =
                     keyboardShouldPersistTaps='handled'
                     keyExtractor={(item) => `list-carousel-${item.id}`}
                     listKey={Math.random().toString()}
-                    renderItem={({ item }) => (
-                        <ListCarousalItem
-                            imageSrc={item.image_url}
-                            artist={item.artist}
-                            title={item.title}
-                            releaseDate={item.release_year}
-                            id={item.id}
-                            isFeed
-                        />
-                    )}
+                    renderItem={renderItem}
                 />
             </CarouselListWrapper>
 
