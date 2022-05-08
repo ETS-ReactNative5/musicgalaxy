@@ -1,0 +1,395 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing List Carousel Component should match the List Carousel component snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginHorizontal": 29,
+          "marginVertical": 22,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#F26E22",
+            "fontSize": 25,
+            "fontWeight": "bold",
+          },
+        ]
+      }
+      testID="LIST_CAROUSEL_HEADER_TITLE"
+    >
+      Rock
+    </Text>
+    <Text
+      onPress={[Function]}
+      style={
+        Array [
+          Object {
+            "color": "#176fb9",
+            "fontSize": 15,
+            "textDecorationLine": "underline",
+          },
+        ]
+      }
+      testID="LIST_CAROUSEL_SEE_ALL_TITLE"
+    >
+      See All
+    </Text>
+  </View>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "artist": "El Koala",
+          "genre_id": 8,
+          "id": 501649,
+          "release_year": 2014,
+          "title": "Veni paca to",
+        },
+        Object {
+          "artist": "Tom Petty and the Heartbreakers",
+          "genre_id": 8,
+          "id": 501895,
+          "release_year": 2010,
+          "title": "I Should Have Known It",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={true}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    listKey="0.3716437395993959"
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    testID="LIST_CAROUSEL_FLATLIST"
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginBottom": 22,
+                "marginLeft": 22,
+                "marginRight": 22,
+                "marginTop": 22,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "overflow": "hidden",
+                  },
+                  Array [
+                    Object {
+                      "borderTopLeftRadius": 11,
+                      "borderTopRightRadius": 11,
+                      "height": 326,
+                      "resizeMode": "contain",
+                      "width": 417,
+                    },
+                  ],
+                ]
+              }
+            >
+              <FastImageView
+                onFastImageLoadEnd={[Function]}
+                resizeMode="cover"
+                source={
+                  Object {
+                    "testUri": "../../../assets/loading.png",
+                  }
+                }
+                style={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+                testID="LIST_CAROUSEL_ITEM_IMAGE_SRC"
+              />
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "rgba(12, 12, 12, 0.5)",
+                    "borderTopLeftRadius": 30,
+                    "bottom": 0,
+                    "height": 145,
+                    "justifyContent": "center",
+                    "paddingBottom": 15,
+                    "paddingLeft": 15,
+                    "paddingRight": 15,
+                    "paddingTop": 15,
+                    "position": "absolute",
+                    "width": "100%",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                    },
+                  ]
+                }
+                testID="LIST_CAROUSEL_ITEM_TITLE"
+              >
+                Veni paca to
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#27245E",
+                  "justifyContent": "center",
+                  "paddingVertical": 7,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }
+              testID="LIST_CAROUSEL_ITEM_ARTIST_TEXT"
+            >
+              El Koala
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }
+              testID="LIST_CAROUSEL_ITEM_RELEASE_DATE"
+            >
+              2014
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginBottom": 22,
+                "marginLeft": 22,
+                "marginRight": 22,
+                "marginTop": 22,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "overflow": "hidden",
+                  },
+                  Array [
+                    Object {
+                      "borderTopLeftRadius": 11,
+                      "borderTopRightRadius": 11,
+                      "height": 326,
+                      "resizeMode": "contain",
+                      "width": 417,
+                    },
+                  ],
+                ]
+              }
+            >
+              <FastImageView
+                onFastImageLoadEnd={[Function]}
+                resizeMode="cover"
+                source={
+                  Object {
+                    "testUri": "../../../assets/loading.png",
+                  }
+                }
+                style={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+                testID="LIST_CAROUSEL_ITEM_IMAGE_SRC"
+              />
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "rgba(12, 12, 12, 0.5)",
+                    "borderTopLeftRadius": 30,
+                    "bottom": 0,
+                    "height": 145,
+                    "justifyContent": "center",
+                    "paddingBottom": 15,
+                    "paddingLeft": 15,
+                    "paddingRight": 15,
+                    "paddingTop": 15,
+                    "position": "absolute",
+                    "width": "100%",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                    },
+                  ]
+                }
+                testID="LIST_CAROUSEL_ITEM_TITLE"
+              >
+                I Should Have Known It
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#27245E",
+                  "justifyContent": "center",
+                  "paddingVertical": 7,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }
+              testID="LIST_CAROUSEL_ITEM_ARTIST_TEXT"
+            >
+              Tom Petty and the Heartbreakers
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }
+              testID="LIST_CAROUSEL_ITEM_RELEASE_DATE"
+            >
+              2010
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

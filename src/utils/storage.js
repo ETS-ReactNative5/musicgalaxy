@@ -7,9 +7,8 @@ import EncryptedStorage from 'react-native-encrypted-storage';
  */
 export const load = async (key) => {
     try {
-        const getValue = await EncryptedStorage.getItem(key);
-        console.log('Val',getValue)
-        return JSON.parse(getValue);
+        const value = await EncryptedStorage.getItem(key);
+        return value;
     } catch {
         return null;
     }
@@ -23,9 +22,10 @@ export const load = async (key) => {
  */
 export const save = async (key, value) => {
     try {
-        await EncryptedStorage.setItem(key, JSON.stringify(value));
+        await EncryptedStorage.setItem(key, value);
         return true;
-    } catch {
+    } catch(err) {
+        console.log('ERRROR',err)
         return false;
     }
 }

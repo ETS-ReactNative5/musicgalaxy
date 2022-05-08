@@ -6,7 +6,12 @@ import { useSelector } from 'react-redux';
 import { MovieItem } from '@src/components/movie-item';
 import { Container, TitleWrapper, StyledText } from './styled';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
+/**
+ * This screen is responsible to show the list 
+ * of videos that are linked to specific genre 
+ * of music and we are getting the category from
+ * route params while navigating to this screen
+ */
 export const MovieList = ({ route }) => {
     const category = route.params.category || 'Hello';
     const movies = useSelector(getcategorisedList);
@@ -14,7 +19,9 @@ export const MovieList = ({ route }) => {
     const insets= useSafeAreaInsets();
 
     return (
-        <Container insets={insets} >
+        <Container 
+        insets={insets} 
+        >
         <TitleWrapper>
             <StyledText>
                 {`Watch Videos of ${category}`}

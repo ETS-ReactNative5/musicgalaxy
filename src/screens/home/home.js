@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { ListCarousal } from '@src/components/list-carousel';
 import { ScrollableWithBannerLayout } from '@src/components/scrollable-with-banner-layout';
 import { fetchMovies } from '@src/redux/actions';
-import { getcategorisedList, getIsLoading, getMovies } from '@src/redux/selector';
+import { getcategorisedList, getError, getIsLoading } from '@src/redux/selector';
 import { bannerImgSrc, NAVIGATION_ROUTES } from '@src/utils/constants';
 import React, { useEffect } from 'react';
 import { View, BackHandler, Alert, Text } from 'react-native';
@@ -11,6 +11,8 @@ import { useBackHandler } from '@react-native-community/hooks'
 import { useIsFocused } from '@react-navigation/native';
 import { Wave } from 'react-native-animated-spinkit';
 import { APP_COLORS } from '@src/theme/colors';
+import FastImage from 'react-native-fast-image';
+import { FallBackUI } from '@src/components/fallback/fallback';
 
 
 export const HomeScreen = () => {
@@ -18,6 +20,8 @@ export const HomeScreen = () => {
     const dispatch = useDispatch();
     const categories = useSelector(getcategorisedList) || [];
     const isLoading = useSelector(getIsLoading);
+    const hasError = useSelector(getError);
+
     const navigation = useNavigation();
     const isFocused = useIsFocused();
 
@@ -26,6 +30,12 @@ export const HomeScreen = () => {
         dispatch(fetchMovies());
     }, []);
 
+    /**
+     * Handle the hardware button of Android to avoid
+     * returning back to onboarding screens and it should apply on 
+     * the Home Screen as we need it only in this screen and on the other 
+     * screens we need this default handling behaviour of back handler
+     */
     useBackHandler(() => {
         if (isFocused) {
             Alert.alert(
@@ -53,6 +63,13 @@ export const HomeScreen = () => {
         }
     })
 
+    /**
+     * This early return condition is reponsible to handle the Fallback in case
+     * of API failure.
+     */
+    if (!isLoading && hasError) {
+        return <FallBackUI />
+    }
     return (
         isLoading ? (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

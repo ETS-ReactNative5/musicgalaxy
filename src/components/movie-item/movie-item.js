@@ -5,10 +5,14 @@ import {
     StyledWrapper,
     MovieInfoWrapper,
     Title,
-    MetaInfo,
     Container,
     SubTitle,
 } from './styled';
+
+/**
+ * Carousel Item component of individual List Item containing info 
+ * about the Music Video like Img, Title, Artist etc
+ */
 
 export const MovieItem =
     ({

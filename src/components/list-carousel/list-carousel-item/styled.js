@@ -7,7 +7,7 @@ import styled from 'styled-components/native';
 export const StyledImage = styled(FastImage)`
     resize-mode: ${FastImage.resizeMode.contain};
     width:  ${scale(230)}px;
-    height: ${scale(250)}px;
+    height: ${scale(180)}px;
     border-top-left-radius: ${radius.default+4}px;
     border-top-right-radius: ${radius.default+4}px;
 `;

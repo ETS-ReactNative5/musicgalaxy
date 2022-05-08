@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing TextInput Component should match the TextInput component snapshot 1`] = `
+<View>
+  <TextInput
+    className="sc-bczRLJ OLuDo"
+    placeholderTextColor="#ffffff"
+    testID="TEXT_INPUT"
+  />
+</View>
+`;
