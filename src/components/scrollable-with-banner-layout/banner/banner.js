@@ -64,7 +64,6 @@ export const LayoutBanner =
             resizeMode={FastImage.resizeMode.cover}
           />
         </BannerImageWrapper>
-        <BannerOverlay />
         {bannerTitle && (
           <TextWrapper windowWidth={windowWidth}>
             <StyledText>

@@ -15,52 +15,23 @@ const getBannerHeight = (insets) => Platform.select({
   android: 0,
 });
 
-
 export const BannerImageWrapper = styled.TouchableOpacity`
   position: relative;
   width: ${({ windowWidth }) => windowWidth * IMAGE_SCALE_FACTOR}px;
   height: ${({ insets }) => getBannerHeight(insets)};
-  z-index: 1
-`;
-
-export const BannerPlaceholder = styled(Animated.Image)`
-  position: absolute;
-  top: ${({ insets }) => insets.top}px;
-  resize-mode: contain;
-  background-color: red;
-  z-index: 222;
+  z-index: 1;
 `;
 
 export const BannerImage = styled(Animated.createAnimatedComponent(FastImage))`
   position: absolute;
-  top: 0;
+  top: 50;
   width: 100%;
-  height: ${({ windowWidth }) => getBannerImageHeight(windowWidth) * IMAGE_SCALE_FACTOR}px;
-  resize-mode: contain;
+  height: ${({ windowWidth }) => getBannerImageHeight(windowWidth) * IMAGE_SCALE_FACTOR }px;
+  resize-mode: cover;
   left: -${({ windowWidth }) => (windowWidth * IMAGE_SCALE_FACTOR - windowWidth )/ 2}px;
   width: ${({ windowWidth }) => windowWidth * IMAGE_SCALE_FACTOR}px;
-  background-color: gray;
 `;
 
-export const LoaderWrapper = styled.View`
-  position: absolute;
-  height: 5%;
-  width: ${({ windowWidth }) => windowWidth}px;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-`;
-
-export const Banner = styled.TouchableOpacity``;
-
-export const BannerOverlay = styled.View`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 40%;
-  background-color: black;
-  opacity: 0.5;  
-`;
 
 export const TextWrapper = styled.View`
   position: absolute;

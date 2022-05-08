@@ -82,5 +82,25 @@ To make the architecture easy to understand and make it clear and comfortable to
 
 ## Attaching Screenshots of the application to see the layouts:
 
+- ![Loading ..](/demo/splash.jpg?raw=true)
 
+- ![Loading ..](/demo/on1.png?raw=true)
+
+- ![Loading ..](/demo/on2.png?raw=true)
+
+- ![Loading ..](/demo/on3.png?raw=true)
+
+- ![Loading ..](/demo/loading.png?raw=true)
+
+- ![Loading ..](/demo/home.png?raw=true)
+
+- ![Loading ..](/demo/list.png?raw=true)
+
+- ![Loading ..](/demo/view.png?raw=true)
+
+- ![Loading ..](/demo/playlist.png?raw=true)
+
+- ![Loading ..](/demo/search.png?raw=true)
+
+- ![Loading ..](/demo/search_result.png?raw=true)
 

@@ -1,3 +1,4 @@
+import { scale } from '@src/utils/media';
 import { Platform } from 'react-native';
 
 import styled from 'styled-components/native';
@@ -34,9 +35,9 @@ export const getContainerContentContainerStyles = (isTabBarVisible, insets) => {
 
 export const Container = styled(AnimatedFlatList)`
   background-color: transparent;
-  margin-top: ${({ hasBannerImage }) => Platform.select({
-  ios: 0,
-  android: true ? 60 : -60,
+  margin-top: ${Platform.select({
+  ios: scale(50),
+  android: scale(100),
 })}px;
   height: 100%;
   
