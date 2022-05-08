@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing FallBack Component should match the Fallback component snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "height": "20%",
+          "width": "90%",
+        },
+      ]
+    }
+  >
+    <FastImageView
+      resizeMode="contain"
+      source={
+        Object {
+          "testUri": "../../../assets/error.png",
+        }
+      }
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      testID="FALLBACK_IMAGE_SRC"
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "red",
+        "fontSize": 16,
+        "textAlign": "center",
+      }
+    }
+    testID="FALLBACK_TITLE"
+  >
+    Something went wrong while fetching the list of Music Videos :(
+  </Text>
+</View>
+`;

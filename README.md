@@ -60,10 +60,14 @@ As others projects, you will need some requirements to run:
 
 ## Commands:
 
+All the scripts are written in `package.json`
+
 - yarn ios to run on iOS simulator
 - yarn android to run on Android simulator
 - yarn start:clean to run metro with cache clean
 - yarn test to to run the test
+- yarn test:collect-coverage to gather the test report 
+- yarn pod to install the cocapods
 
 <br>
 

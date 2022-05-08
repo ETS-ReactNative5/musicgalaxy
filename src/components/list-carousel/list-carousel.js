@@ -4,6 +4,7 @@ import { FlatList } from 'react-native';
 import { ListCarousalItem } from './list-carousel-item';
 import { CarouselListHeader, CarouselListWrapper, HeaderContainer, ViewAll } from './styled';
 import { defaultProps, propTypes } from './props';
+import { TEST_IDS } from '@src/utils/constants';
 
 /**
  * This component is responsible to render the list of 
@@ -17,7 +18,7 @@ export const ListCarousal =
         shouldShowViewAll,
         onPressViewAll
     }) => {
-        
+
         const renderItem = ({ item }) => (
             <ListCarousalItem
                 imageSrc={item.image_url}
@@ -32,13 +33,13 @@ export const ListCarousal =
         return (
             <CarouselListWrapper>
                 <HeaderContainer>
-                    <CarouselListHeader>
+                    <CarouselListHeader testID={TEST_IDS.LIST_CAROUSEL_HEADER_TITLE} >
                         {headerTitle}
                     </CarouselListHeader>
                     {
                         shouldShowViewAll &&
                         (
-                            <ViewAll onPress={onPressViewAll} >
+                            <ViewAll onPress={onPressViewAll} testID={TEST_IDS.LIST_CAROUSEL_SEE_ALL_TITLE} >
                                 See All
                             </ViewAll>
                         )
@@ -46,6 +47,7 @@ export const ListCarousal =
 
                 </HeaderContainer>
                 <FlatList
+                    testID={TEST_IDS.LIST_CAROUSEL_FLATLIST}
                     horizontal
                     data={movies}
                     keyboardShouldPersistTaps='handled'

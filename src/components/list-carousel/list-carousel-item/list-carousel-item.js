@@ -1,3 +1,4 @@
+import { TEST_IDS } from '@src/utils/constants';
 import React, { useState } from 'react';
 
 import {
@@ -40,20 +41,21 @@ export const ListCarousalItem =
             <Container>
                 <StyledWrapper>
                     <StyledImage
+                        testID={TEST_IDS.LIST_CAROUSEL_ITEM_IMAGE_SRC}
                         onLoadEnd={() => setIsLoading(false)}
                         source={getImageSrc()}
                     />
                     <MovieInfoWrapper>
-                        <Title>
+                        <Title testID={TEST_IDS.LIST_CAROUSEL_ITEM_TITLE}>
                             {title}
                         </Title>
                     </MovieInfoWrapper>
                 </StyledWrapper>
                 <MetaInfo>
-                    <SubTitle>
+                    <SubTitle testID={TEST_IDS.LIST_CAROUSEL_ITEM_ARTIST_TEXT}>
                         {artist}
                     </SubTitle>
-                    <SubTitle>
+                    <SubTitle testID={TEST_IDS.LIST_CAROUSEL_ITEM_RELEASE_DATE}>
                         {releaseDate}
                     </SubTitle>
                 </MetaInfo>

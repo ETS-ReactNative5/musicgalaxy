@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import {APP_COLORS} from '@src/theme/colors';
 import {scale} from '@src/utils/media';
 import {radius, spacing} from '@src/theme/spacing';
+import { TextInput } from 'react-native';
 
 
-export const StyledTextInput = styled.TextInput`
+export const StyledTextInput = styled(TextInput)`
   border: ${APP_COLORS.white};
   padding: ${spacing.small}px;
   padding-left: ${({leftIconPadding}) =>
