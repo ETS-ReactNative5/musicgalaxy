@@ -54,7 +54,7 @@ export const ListCarousal =
                     data={movies}
                     keyboardShouldPersistTaps='handled'
                     keyExtractor={(item) => `list-carousel-${item.id}`}
-                    listKey={Math.random().toString()}
+                    listKey={`list-carousel`}
                     renderItem={renderItem}
                 />
             </CarouselListWrapper>

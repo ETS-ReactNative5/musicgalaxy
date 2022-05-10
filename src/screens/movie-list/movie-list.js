@@ -33,7 +33,7 @@ export const MovieList = ({ route }) => {
                 data={requiredList}
                 keyboardShouldPersistTaps='handled'
                 keyExtractor={(item) => `movie-${item.id}`}
-                listKey={(item) => item.id}
+                listKey={`movie-list`}
                 renderItem={({ item }) => (
                     <MovieItem
                         imageSrc={item.image_url}

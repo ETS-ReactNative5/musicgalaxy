@@ -136,6 +136,7 @@ export const HomeScreen = () => {
                                 releaseDate={item.release_year}
                                 id={item.id}
                                 isFeed={false}
+                                key={item.id}
                             />
                         )
                     })
@@ -145,6 +146,7 @@ export const HomeScreen = () => {
                             <ListCarousal
                                 movies={categories[category].slice(0, 6)}
                                 headerTitle={category}
+                                key={category}
                                 onPressViewAll={() => navigation.navigate(NAVIGATION_ROUTES.VIEW_ALL, { category: category })}
                                 shouldShowViewAll={categories[category]?.length > 6}
                             />

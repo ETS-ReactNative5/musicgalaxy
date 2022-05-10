@@ -75,7 +75,7 @@ exports[`Testing List Carousel Component should match the List Carousel componen
     horizontal={true}
     keyExtractor={[Function]}
     keyboardShouldPersistTaps="handled"
-    listKey="0.5030598088594116"
+    listKey="list-carousel"
     onContentSizeChange={[Function]}
     onLayout={[Function]}
     onMomentumScrollBegin={[Function]}
