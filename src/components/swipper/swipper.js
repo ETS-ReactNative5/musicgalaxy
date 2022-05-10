@@ -1,12 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
-import FastImage from 'react-native-fast-image';
-
+import { useNavigation } from '@react-navigation/native';
 import Onboarding from 'react-native-onboarding-swiper';
-import { scale } from '@src/utils/media';
+
 import { APP_COLORS } from '@src/theme/colors';
 import { save } from '@src/utils/storage';
-import { useNavigation } from '@react-navigation/native';
+
+import { StyledImage, StyledView } from './styled';
+import { defaultProps, propTypes } from './props';
 
 /**
  * This component is responsible to show user a first visit
@@ -15,11 +15,7 @@ import { useNavigation } from '@react-navigation/native';
 export const pages = [
     {
         backgroundColor: APP_COLORS.black,
-        image: <FastImage
-            style={{
-                height: scale(400),
-                width: scale(400),
-            }}
+        image: <StyledImage
             source={require('@assets/pic1.png')}
             resizeMode='contain'
         />,
@@ -28,11 +24,7 @@ export const pages = [
     },
     {
         backgroundColor: APP_COLORS.green,
-        image: <FastImage
-            style={{
-                height: scale(400),
-                width: scale(400),
-            }}
+        image: <StyledImage
             source={require('@assets/pic2.png')}
             resizeMode='contain'
         />,
@@ -41,11 +33,7 @@ export const pages = [
     },
     {
         backgroundColor: APP_COLORS.patternWhite,
-        image: <FastImage
-            style={{
-                height: scale(400),
-                width: scale(400),
-            }}
+        image: <StyledImage
             source={require('@assets/pic.png')}
             resizeMode='contain'
         />,
@@ -63,12 +51,15 @@ export const Swipper = () => {
         save('new_app_installed', 'true');
     }
     return (
-        <View style={{ height: '100%' }} >
+        <StyledView>
             <Onboarding
                 onDone={onComplete}
                 showSkip={false}
                 pages={pages}
             />
-        </View>
+        </StyledView>
     )
 }
+
+Swipper.defaultProps = defaultProps;
+Swipper.propTypes = propTypes;

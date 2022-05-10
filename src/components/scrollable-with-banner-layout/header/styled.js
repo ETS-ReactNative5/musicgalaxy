@@ -72,3 +72,17 @@ export const FilterIcon = styled(SvgXml)`
   margin-left: 5px;
 `;
 
+export const AnimatedView = styled(Animated.View)`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const FilterWrapper = styled.View`
+  background-color: ${APP_COLORS.black};
+  padding-horizontal: ${scale(5)}px;
+  border-radius: ${scale(5)}px;
+  position: absolute;
+  right: -${scale(15)};
+  top: -${scale(8)};
+`;
+

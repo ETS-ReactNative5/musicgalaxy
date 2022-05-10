@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { View, BackHandler, Alert, ToastAndroid } from 'react-native';
+import { BackHandler, Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useBackHandler } from '@react-native-community/hooks'
 import { useIsFocused } from '@react-navigation/native';
@@ -10,6 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 import { ListCarousal } from '@src/components/list-carousel';
 import { ScrollableWithBannerLayout } from '@src/components/scrollable-with-banner-layout';
 import { fetchMovies } from '@src/redux/actions';
+
 import {
     getcategorisedList,
     getError,
@@ -19,10 +20,12 @@ import {
     getSearchQuery,
     getYearFilter
 } from '@src/redux/selector';
+
 import { bannerImgSrc, NAVIGATION_ROUTES } from '@src/utils/constants';
 import { APP_COLORS } from '@src/theme/colors';
 import { FallBackUI } from '@src/components/fallback/fallback';
 import { MovieItem } from '@src/components/movie-item';
+import { LoaderWrapper } from './styled';
 
 
 export const HomeScreen = () => {
@@ -44,7 +47,6 @@ export const HomeScreen = () => {
     const allMovies = useSelector(getMovies);
 
     const getFilteredData = () => {
-        console.log('In Funct')
         return allMovies.filter((movie) => {
             let filterResults = true;
             if (yearQuery?.length > 0) {
@@ -65,7 +67,6 @@ export const HomeScreen = () => {
 
 
     useEffect(() => {
-        console.log('Hello')
         setFilteredData(getFilteredData());
     }, [searchQuery.length, genreQuery.length, yearQuery.length]);
 
@@ -116,9 +117,9 @@ export const HomeScreen = () => {
 
     return (
         isLoading ? (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <LoaderWrapper >
                 <Wave size={70} color={APP_COLORS.orange} />
-            </View>
+            </LoaderWrapper>
         ) : (
             <ScrollableWithBannerLayout
                 showBackButton={false}

@@ -9,6 +9,8 @@ import {
     SubTitle,
 } from './styled';
 
+import { defaultProps, propTypes } from './props';
+
 /**
  * Carousel Item component of individual List Item containing info 
  * about the Music Video like Img, Title, Artist etc
@@ -42,3 +44,6 @@ export const MovieItem =
             </Container>
         )
     };
+
+MovieItem.propTypes = propTypes;
+MovieItem.defaultProps = defaultProps;

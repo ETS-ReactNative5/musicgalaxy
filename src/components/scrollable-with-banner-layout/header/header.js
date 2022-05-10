@@ -9,7 +9,6 @@ import {
 
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 import { useDispatch, useSelector } from 'react-redux';
-import Animated from 'react-native-reanimated';
 
 import { filterIconSvg, searchIconSvg } from '@src/utils/constants';
 import { scale } from '@src/utils/media';
@@ -23,9 +22,11 @@ import {
   Title,
   SearchIcon,
   LeftIconWrapper,
-  StyledTextInput
+  StyledTextInput,
+  AnimatedView,
+  FilterWrapper
 } from './styled';
-import { APP_COLORS } from '@src/theme/colors';
+
 
 
 export const LayoutHeader =
@@ -121,13 +122,9 @@ export const LayoutHeader =
             </>
           ) :
             (
-              <Animated.View
+              <AnimatedView
                 entering={FadeInUp}
                 exiting={FadeInDown}
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}
               >
                 <StyledTextInput
                   onChangeText={setSearchResults}
@@ -151,13 +148,12 @@ export const LayoutHeader =
 
                 {
                   selectedItemsObject.length > 0 && (
-                    <View style={{ backgroundColor: APP_COLORS.black , paddingHorizontal: scale(5), borderRadius: scale(5), position: 'absolute', right: -scale(15), top: -scale
-                    (8) }} >
+                    <FilterWrapper >
                       <Text style={{ color: 'white' }} >{selectedItemsObject.length}</Text>
-                    </View>
+                    </FilterWrapper>
                   )
                 }
-              </Animated.View>
+              </AnimatedView>
             )
         }
         <SectionedMultiSelect

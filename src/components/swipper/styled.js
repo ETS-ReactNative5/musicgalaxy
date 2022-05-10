@@ -1,13 +1,14 @@
 import styled from "styled-components/native";
-import Swiper from 'react-native-swiper'
-import { ImageBackground } from 'react-native';
+import FastImage from "react-native-fast-image";
+import { scale } from "@src/utils/media";
 
-export const SwipperWrapper = styled(Swiper)``;
 
-export const ItemWrapper = styled(ImageBackground)`
-    flex: 1;
-    justifyContent: center;
-    alignItems: center;
+export const StyledView = styled.View`
+    height: 100%;
 `;
 
-export const TextWrapper = styled.Text``;
+export const StyledImage = styled(FastImage)`
+    height: ${scale(400)}px;
+    width: ${scale(400)}px;
+`;
+
