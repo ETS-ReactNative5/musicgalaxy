@@ -5,6 +5,10 @@ const getError = (state) => get(state, 'hasError', false);
 const getMovies = (state) => get(state, 'moviesList', []);
 const getGenres = (state) => get(state, 'genres', []);
 const getcategorisedList = (state) => get(state, 'categorisedList', []);
+const getYears = (state) => get(state, 'years', []);
+const getSearchQuery = (state) => get(state, 'searchQuery', '');
+const getGenreFilter = (state) => get(state, 'genreFilter', []);
+const getYearFilter = (state) => get(state, 'yearFilter', []);
 
 
 export {
@@ -12,7 +16,11 @@ export {
     getError,
     getMovies,
     getGenres,
-    getcategorisedList
+    getcategorisedList,
+    getYears,
+    getSearchQuery,
+    getGenreFilter,
+    getYearFilter
 };
 
 export default {
@@ -20,5 +28,9 @@ export default {
     getError,
     getMovies,
     getGenres,
-    getcategorisedList
+    getcategorisedList,
+    getYears,
+    getSearchQuery,
+    getGenreFilter,
+    getYearFilter
 };

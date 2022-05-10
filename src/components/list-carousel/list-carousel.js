@@ -3,7 +3,6 @@ import { FlatList } from 'react-native';
 
 import { ListCarousalItem } from './list-carousel-item';
 import { CarouselListHeader, CarouselListWrapper, HeaderContainer, ViewAll } from './styled';
-import { defaultProps, propTypes } from './props';
 import { TEST_IDS } from '@src/utils/constants';
 
 /**
@@ -60,6 +59,3 @@ export const ListCarousal =
         )
     };
 
-
-ListCarousal.propTypes = propTypes;
-ListCarousal.defaultProps = defaultProps;

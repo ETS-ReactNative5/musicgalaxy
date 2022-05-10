@@ -4,9 +4,6 @@ import ImageView from "react-native-image-viewing";
 import { interpolate, useAnimatedStyle } from 'react-native-reanimated';
 import FastImage from 'react-native-fast-image';
 
-// Props & Styles
-import { defaultProps, propTypes } from './props';
-
 import {
   BannerOverlay,
   BannerImage,
@@ -82,6 +79,3 @@ export const LayoutBanner =
       </>
     );
   };
-
-LayoutBanner.propTypes = propTypes;
-LayoutBanner.defaultProps = defaultProps;

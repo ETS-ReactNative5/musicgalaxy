@@ -36,7 +36,7 @@ export const BannerImage = styled(Animated.createAnimatedComponent(FastImage))`
   top: 0;
   width: 100%;
   height: ${({ windowWidth }) => getBannerImageHeight(windowWidth) * IMAGE_SCALE_FACTOR}px;
-  resize-mode: contain;
+  resize-mode: center;
   left: -${({ windowWidth }) => (windowWidth * IMAGE_SCALE_FACTOR - windowWidth )/ 2}px;
   width: ${({ windowWidth }) => windowWidth * IMAGE_SCALE_FACTOR}px;
   background-color: gray;

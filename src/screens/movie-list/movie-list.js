@@ -1,11 +1,13 @@
 import React from 'react';
-import { getcategorisedList } from '@src/redux/selector';
 
 import { FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
-import { MovieItem } from '@src/components/movie-item';
-import { Container, TitleWrapper, StyledText } from './styled';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { MovieItem } from '@src/components/movie-item';
+import { getcategorisedList } from '@src/redux/selector';
+import { Container, TitleWrapper, StyledText } from './styled';
+
 /**
  * This screen is responsible to show the list 
  * of videos that are linked to specific genre 

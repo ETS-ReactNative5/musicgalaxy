@@ -5,7 +5,6 @@ import { HomeScreen } from '@src/screens/home';
 import { Swipper } from '@src/components/swipper/swipper';
 import { NAVIGATION_ROUTES } from '@src/utils/constants';
 import { MovieList } from '@src/screens/movie-list';
-import { Search } from '@src/screens/search';
 
 const Stack = createStackNavigator();
 
@@ -31,11 +30,6 @@ export const Navigation = ({ firstLaunchFlag }) => {
             <Stack.Screen
                 name={NAVIGATION_ROUTES.VIEW_ALL}
                 component={MovieList}
-                options={{ headerTitle: null }}
-            />
-            <Stack.Screen
-                name={NAVIGATION_ROUTES.SEARCH}
-                component={Search}
                 options={{ headerTitle: null }}
             />
         </Stack.Navigator>

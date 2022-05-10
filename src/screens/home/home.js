@@ -1,30 +1,73 @@
-import { useNavigation } from '@react-navigation/native';
-import { ListCarousal } from '@src/components/list-carousel';
-import { ScrollableWithBannerLayout } from '@src/components/scrollable-with-banner-layout';
-import { fetchMovies } from '@src/redux/actions';
-import { getcategorisedList, getError, getIsLoading } from '@src/redux/selector';
-import { bannerImgSrc, NAVIGATION_ROUTES } from '@src/utils/constants';
-import React, { useEffect } from 'react';
-import { View, BackHandler, Alert, Text } from 'react-native';
+
+import React, { useEffect, useState } from 'react';
+import { View, BackHandler, Alert, ToastAndroid } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useBackHandler } from '@react-native-community/hooks'
 import { useIsFocused } from '@react-navigation/native';
 import { Wave } from 'react-native-animated-spinkit';
+import { useNavigation } from '@react-navigation/native';
+
+import { ListCarousal } from '@src/components/list-carousel';
+import { ScrollableWithBannerLayout } from '@src/components/scrollable-with-banner-layout';
+import { fetchMovies } from '@src/redux/actions';
+import {
+    getcategorisedList,
+    getError,
+    getGenreFilter,
+    getIsLoading,
+    getMovies,
+    getSearchQuery,
+    getYearFilter
+} from '@src/redux/selector';
+import { bannerImgSrc, NAVIGATION_ROUTES } from '@src/utils/constants';
 import { APP_COLORS } from '@src/theme/colors';
-import FastImage from 'react-native-fast-image';
 import { FallBackUI } from '@src/components/fallback/fallback';
+import { MovieItem } from '@src/components/movie-item';
 
 
 export const HomeScreen = () => {
 
     const dispatch = useDispatch();
+    const navigation = useNavigation();
+    const isFocused = useIsFocused();
+
     const categories = useSelector(getcategorisedList) || [];
     const isLoading = useSelector(getIsLoading);
     const hasError = useSelector(getError);
 
-    const navigation = useNavigation();
-    const isFocused = useIsFocused();
+    const [filteredData, setFilteredData] = useState([]);
 
+    const searchQuery = useSelector(getSearchQuery);
+    const genreQuery = useSelector(getGenreFilter);
+    const yearQuery = useSelector(getYearFilter);
+
+    const allMovies = useSelector(getMovies);
+
+    const getFilteredData = () => {
+        console.log('In Funct')
+        return allMovies.filter((movie) => {
+            let filterResults = true;
+            if (yearQuery?.length > 0) {
+                filterResults = yearQuery.includes(movie.release_year)
+            }
+            if (genreQuery?.length > 0) {
+                filterResults = filterResults && genreQuery.includes(movie.genre_id);
+            }
+            if (searchQuery?.length > 0) {
+                filterResults = filterResults && (searchQuery == movie.artist || searchQuery == movie.title);
+            }
+            return filterResults;
+        })
+    };
+
+
+    const shouldShowFilteredData = (searchQuery.length || genreQuery.length || yearQuery.length) && filteredData.length;
+
+
+    useEffect(() => {
+        console.log('Hello')
+        setFilteredData(getFilteredData());
+    }, [searchQuery.length, genreQuery.length, yearQuery.length]);
 
     useEffect(() => {
         dispatch(fetchMovies());
@@ -70,6 +113,7 @@ export const HomeScreen = () => {
     if (!isLoading && hasError) {
         return <FallBackUI />
     }
+
     return (
         isLoading ? (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -81,16 +125,32 @@ export const HomeScreen = () => {
                 title='Best Movies to Watch'
                 bannerImageSrc={bannerImgSrc}
             >
-                {Object.keys(categories).map((category) => {
-                    return (
-                        <ListCarousal
-                            movies={categories[category].slice(0, 6)}
-                            headerTitle={category}
-                            onPressViewAll={() => navigation.navigate(NAVIGATION_ROUTES.VIEW_ALL, { category: category })}
-                            shouldShowViewAll={categories[category]?.length > 6}
-                        />
-                    )
-                })}
+                {shouldShowFilteredData ? (
+                    filteredData.map((item) => {
+                        return (
+                            <MovieItem
+                                imageSrc={item.image_url}
+                                artist={item.artist}
+                                title={item.title}
+                                releaseDate={item.release_year}
+                                id={item.id}
+                                isFeed={false}
+                            />
+                        )
+                    })
+                ) : (
+                    Object.keys(categories).map((category) => {
+                        return (
+                            <ListCarousal
+                                movies={categories[category].slice(0, 6)}
+                                headerTitle={category}
+                                onPressViewAll={() => navigation.navigate(NAVIGATION_ROUTES.VIEW_ALL, { category: category })}
+                                shouldShowViewAll={categories[category]?.length > 6}
+                            />
+                        )
+                    })
+                )}
+
             </ScrollableWithBannerLayout>
         ))
 }
