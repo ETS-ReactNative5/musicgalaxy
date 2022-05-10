@@ -24,8 +24,8 @@ export const save = async (key, value) => {
     try {
         await EncryptedStorage.setItem(key, value);
         return true;
-    } catch(err) {
-        console.log('ERRROR',err)
+    } catch (err) {
+        console.log('ERRROR', err)
         return false;
     }
 }

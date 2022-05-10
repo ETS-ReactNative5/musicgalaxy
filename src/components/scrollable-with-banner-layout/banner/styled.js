@@ -1,7 +1,7 @@
 import { Platform } from 'react-native';
 import Animated from 'react-native-reanimated';
 import styled from 'styled-components/native';
-import FastImage  from 'react-native-fast-image';
+import FastImage from 'react-native-fast-image';
 
 import {
   HEADER_HEIGHT,
@@ -37,7 +37,7 @@ export const BannerImage = styled(Animated.createAnimatedComponent(FastImage))`
   width: 100%;
   height: ${({ windowWidth }) => getBannerImageHeight(windowWidth) * IMAGE_SCALE_FACTOR}px;
   resize-mode: center;
-  left: -${({ windowWidth }) => (windowWidth * IMAGE_SCALE_FACTOR - windowWidth )/ 2}px;
+  left: -${({ windowWidth }) => (windowWidth * IMAGE_SCALE_FACTOR - windowWidth) / 2}px;
   width: ${({ windowWidth }) => windowWidth * IMAGE_SCALE_FACTOR}px;
   background-color: gray;
 `;
@@ -71,7 +71,7 @@ export const TextWrapper = styled.View`
   height: 80;
   align-items: center;
   justify-content: center;
-  left: -${({ windowWidth }) => (windowWidth * IMAGE_SCALE_FACTOR - windowWidth )/ 2}px;
+  left: -${({ windowWidth }) => (windowWidth * IMAGE_SCALE_FACTOR - windowWidth) / 2}px;
   width: ${({ windowWidth }) => windowWidth * IMAGE_SCALE_FACTOR}px;
 `;
 

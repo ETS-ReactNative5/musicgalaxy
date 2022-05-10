@@ -20,7 +20,7 @@ const setFilterQuery = (query) => (dispatch) => {
 }
 
 const clearFilters = () => (dispatch) => {
-    dispatch({ type: TYPES.CLEAR_FILTERS});
+    dispatch({ type: TYPES.CLEAR_FILTERS });
 }
 
 const fetchMovies = () => async (dispatch) => {

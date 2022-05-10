@@ -18,33 +18,33 @@ export const MovieList = ({ route }) => {
     const category = route.params.category || 'Hello';
     const movies = useSelector(getcategorisedList);
     const requiredList = movies[category];
-    const insets= useSafeAreaInsets();
+    const insets = useSafeAreaInsets();
 
     return (
-        <Container 
-        insets={insets} 
+        <Container
+            insets={insets}
         >
-        <TitleWrapper>
-            <StyledText>
-                {`Watch Videos of ${category}`}
-            </StyledText>
-        </TitleWrapper>
-        <FlatList
-            data={requiredList}
-            keyboardShouldPersistTaps='handled'
-            keyExtractor={(item) => `movie-${item.id}`}
-            listKey={(item)=> item.id}
-            renderItem={({ item }) => (
-                <MovieItem
-                    imageSrc={item.image_url}
-                    artist={item.artist}
-                    title={item.title}
-                    releaseDate={item.release_year}
-                    id={item.id}
-                    isFeed={false}
-                />
-            )}
-        />
+            <TitleWrapper>
+                <StyledText>
+                    {`Watch Videos of ${category}`}
+                </StyledText>
+            </TitleWrapper>
+            <FlatList
+                data={requiredList}
+                keyboardShouldPersistTaps='handled'
+                keyExtractor={(item) => `movie-${item.id}`}
+                listKey={(item) => item.id}
+                renderItem={({ item }) => (
+                    <MovieItem
+                        imageSrc={item.image_url}
+                        artist={item.artist}
+                        title={item.title}
+                        releaseDate={item.release_year}
+                        id={item.id}
+                        isFeed={false}
+                    />
+                )}
+            />
         </Container>
     )
 }

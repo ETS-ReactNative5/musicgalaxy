@@ -108,7 +108,7 @@ export const ScrollableWithBannerLayout = forwardRef(({
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => `topicDetail-${item?.key}-${item?.data}`}
       />
-      
+
     </React.Fragment>
   );
 });

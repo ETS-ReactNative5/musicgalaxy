@@ -34,11 +34,11 @@ export const MovieItem =
                             {title}
                         </Title>
                         <SubTitle>
-                        {artist}
-                    </SubTitle>
-                    <SubTitle>
-                        {releaseDate}
-                    </SubTitle>
+                            {artist}
+                        </SubTitle>
+                        <SubTitle>
+                            {releaseDate}
+                        </SubTitle>
                     </MovieInfoWrapper>
                 </StyledWrapper>
             </Container>
