@@ -7,7 +7,6 @@ import {
   useAnimatedStyle,
 } from 'react-native-reanimated';
 
-
 import { StatusBar, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -15,8 +14,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LayoutHeader } from './header';
 import { LayoutBanner } from './banner';
 
-// Props & Styles
-import { defaultProps, propTypes } from './props';
 import {
   BodyWrapper,
   Container,
@@ -111,10 +108,8 @@ export const ScrollableWithBannerLayout = forwardRef(({
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => `topicDetail-${item?.key}-${item?.data}`}
       />
-      
+
     </React.Fragment>
   );
 });
 
-ScrollableWithBannerLayout.propTypes = propTypes;
-ScrollableWithBannerLayout.defaultProps = defaultProps;

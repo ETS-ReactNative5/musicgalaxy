@@ -1,17 +1,10 @@
 import { string, number } from 'prop-types';
 
-
 export const propTypes = {
-    imageSrc: string,
-    title: string,
-    rating: number,
-    releaseDate: string,
-    id: number.isRequired
+    imageSrc: string.isRequired,
+    title: string.isRequired,
+    releaseDate: number.isRequired,
+    artist: string.isRequired,
 };
 
-export const defaultProps = {
-    imageSrc: '',
-    title: '',
-    rating: 0,
-    releaseDate: ''
-};
+export const defaultProps = {};

@@ -13,7 +13,7 @@ export const TextInput = ({ LeftIcon, ...props }) => {
       {LeftIcon}
       <StyledTextInput
         testID={TEST_IDS.TEXT_INPUT}
-        placeholderTextColor={APP_COLORS.white}
+        placeholderTextColor={APP_COLORS.red}
         {...props}
       />
     </View>

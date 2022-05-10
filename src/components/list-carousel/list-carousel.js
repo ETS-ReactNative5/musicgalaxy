@@ -2,9 +2,11 @@ import React from 'react';
 import { FlatList } from 'react-native';
 
 import { ListCarousalItem } from './list-carousel-item';
+
+import { TEST_IDS } from '@src/utils/constants';
+
 import { CarouselListHeader, CarouselListWrapper, HeaderContainer, ViewAll } from './styled';
 import { defaultProps, propTypes } from './props';
-import { TEST_IDS } from '@src/utils/constants';
 
 /**
  * This component is responsible to render the list of 
@@ -59,7 +61,6 @@ export const ListCarousal =
 
         )
     };
-
 
 ListCarousal.propTypes = propTypes;
 ListCarousal.defaultProps = defaultProps;

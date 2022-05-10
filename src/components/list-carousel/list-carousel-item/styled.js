@@ -8,8 +8,8 @@ export const StyledImage = styled(FastImage)`
     resize-mode: ${FastImage.resizeMode.contain};
     width:  ${scale(230)}px;
     height: ${scale(180)}px;
-    border-top-left-radius: ${radius.default+4}px;
-    border-top-right-radius: ${radius.default+4}px;
+    border-top-left-radius: ${radius.default + 4}px;
+    border-top-right-radius: ${radius.default + 4}px;
 `;
 
 export const StyledWrapper = styled.View` 

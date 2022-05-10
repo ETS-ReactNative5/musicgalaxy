@@ -4,7 +4,7 @@ import { scaleFont } from "@src/utils/media";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-    margin-bottom: ${({insets})=> insets.bottom}px;
+    margin-bottom: ${({ insets }) => insets.bottom}px;
     background: ${APP_COLORS.white};
     padding-top: ${spacing.default}px;
 `;

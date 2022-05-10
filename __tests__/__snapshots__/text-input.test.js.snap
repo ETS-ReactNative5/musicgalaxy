@@ -4,7 +4,7 @@ exports[`Testing TextInput Component should match the TextInput component snapsh
 <View>
   <TextInput
     className="sc-bczRLJ OLuDo"
-    placeholderTextColor="#ffffff"
+    placeholderTextColor="red"
     testID="TEXT_INPUT"
   />
 </View>
