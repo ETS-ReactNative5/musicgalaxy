@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { BackHandler, Alert } from 'react-native';
+import { BackHandler, Alert, FlatList } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useBackHandler } from '@react-native-community/hooks'
 import { useIsFocused } from '@react-navigation/native';
@@ -127,8 +127,13 @@ export const HomeScreen = () => {
                 bannerImageSrc={bannerImgSrc}
             >
                 {shouldShowFilteredData ? (
-                    filteredData.map((item) => {
-                        return (
+
+                    <FlatList
+                        data={filteredData}
+                        keyboardShouldPersistTaps='handled'
+                        keyExtractor={(item) => `list-${item.id}`}
+                        listKey={`list`}
+                        renderItem={({ item }) => (
                             <MovieItem
                                 imageSrc={item.image_url}
                                 artist={item.artist}
@@ -138,8 +143,9 @@ export const HomeScreen = () => {
                                 isFeed={false}
                                 key={item.id}
                             />
-                        )
-                    })
+                        )}
+                    />
+
                 ) : (
                     Object.keys(categories).map((category) => {
                         return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import {
     StyledImage,
@@ -17,7 +17,7 @@ import { defaultProps, propTypes } from './props';
  */
 
 export const MovieItem =
-    ({
+    memo(({
         imageSrc,
         title,
         releaseDate,
@@ -43,7 +43,7 @@ export const MovieItem =
                 </StyledWrapper>
             </Container>
         )
-    };
+    });
 
 MovieItem.propTypes = propTypes;
 MovieItem.defaultProps = defaultProps;
